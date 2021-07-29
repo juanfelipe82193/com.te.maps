@@ -1,0 +1,39 @@
+ <mvc:View 
+  controllerName="com.te.maps.controller.Main"
+  displayBlock="true"
+  xmlns:html="http://www.w3.org/1999/xhtml"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:core="sap.ui.core" 
+  xmlns="sap.m">
+  <App id="idAppControl" >
+    <pages>
+      <Page id="_IDGenPage1" title="{i18n>title}">
+        <content>
+          <html:div id="map" class="map"></html:div>
+        </content>
+        <footer>
+          <Bar id="_IDGenBar1">
+            <contentLeft>
+              <Button id="_IDGenButton2" text="1 Get Current Location" type="Accept" press="onGetLocation"/>
+              <Button id="_IDGenButton1" text="2 Start Maps" type="Accept" press="onStartMaps"/>
+              <Button id="_IDGenButton3" text="3 Add Marker" type="Accept" press="onAddMarker"/>
+              <Button id="_IDGenButton4" text="4 Enable Zoom" type="Accept" press="onEnableZoom"/>
+              <Select id="_IDGenSelect1" 
+                forceSelection="false"
+                selectedKey="{/TerrainID}"
+                items="{
+                  path: '/Terrains',
+                  sorter: {
+                    path: 'Name'
+                  }
+                }"
+                change="onChange">
+                <core:ListItem id="_IDGenListItem1" key="{TerrainID}" text="{Name}"/>
+              </Select>
+            </contentLeft>
+          </Bar>
+        </footer>
+      </Page>
+    </pages>
+  </App>
+</mvc:View>
